@@ -20,7 +20,9 @@ jobs:
         with:
           enable-cache: true
       - name: Build with Zensical
-        run: uv run zensical build --clean
+        run: |
+          uv run zensical build --clean
+          touch site/.nojekyll
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
